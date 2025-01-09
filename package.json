@@ -1,0 +1,40 @@
+{
+  "name": "native-sqlite-queue",
+  "version": "1.0.0",
+  "description": "A native SQLite queue implementation",
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
+  "files": [
+    "build/src",
+    "src/**/*.sql"
+  ],
+  "scripts": {
+    "prebuild": "pnpm clean",
+    "postbuild": "cp -r src/sql build/src/sql",
+    "build": "tsc",
+    "clean": "gts clean",
+    "dev": "tsx src/index.ts",
+    "fix": "gts fix",
+    "lint": "gts lint",
+    "prepublishOnly": "pnpm build",
+    "test": "tsx src/queue.test.ts"
+  },
+  "keywords": [
+    "sqlite",
+    "queue",
+    "native"
+  ],
+  "author": "Cavit Baturalp Gürdin",
+  "license": "ISC",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "engineStrict": true,
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "gts": "^5.3.1",
+    "tsx": "^4.19.1",
+    "typescript": "^5.4.3"
+  },
+  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1"
+}
